@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Railway Reservation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Railway Reservation System</h1>
+
+    {% if message %}
+    <p class="msg">{{message}}</p>
+    {% endif %}
+
+    <h3>Available Trains:</h3>
+    <pre>{{output}}</pre>
+
+    <form method="POST">
+        <label>Train Number:</label>
+        <input type="text" name="train_no" required>
+
+        <label>Passenger Name:</label>
+        <input type="text" name="name">
+
+        <label>Seat Number:</label>
+        <input type="number" name="seat">
+
+        <button type="submit" name="action" value="book">Book Seat</button>
+        <button type="submit" name="action" value="cancel">Cancel Seat</button>
+    </form>
+</body>
+</html>
